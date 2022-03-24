@@ -56,6 +56,7 @@ void merge(int l, int mid, int r, int* tab)
     int k = 0;      //temporary array index
     int temp_size = r - l + 1; //temporary array size
     int* temp_array = calloc(temp_size, sizeof(int)); //temporary array
+    //looping
     while (i < mid && j < r + 1)    //loop that chooses smaller values and puts them into temporary array
     {
         if (*(tab + i) <= *(tab + j))
