@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define SIZE 16
-
 void mergeSort(int l, int r, int* tab);
 
 void merge(int l, int mid, int r, int* tab);
@@ -11,24 +9,29 @@ void merge(int l, int mid, int r, int* tab);
 int main()
 {
     srand(time(NULL));
-    int tab[SIZE];
-    for (int i = 0; i < SIZE; i++)
+    //define the size of the array
+    int size;
+    printf("size of array?:");
+    scanf("%d", &size);
+    int* tab = calloc(size, sizeof(int));
+    for (int i = 0; i < size; i++)
     {
         *(tab + i) = rand() % 101;
     }
     printf("Before merge sort:\n");
-    for (int i = 0; i < SIZE; i++)
+    for (int i = 0; i < size; i++)
     {
         printf("%d ", *(tab + i));
     }
     printf("\n\nEvery step taken:\n");
-    mergeSort(0, SIZE - 1, tab);
+    mergeSort(0, size - 1, tab);
     printf("\nAfter merge sort:\n");
-    for (int i = 0; i < SIZE; i++)
+    for (int i = 0; i < size; i++)
     {
         printf("%d ", *(tab + i));
     }
     printf("\n");
+    free(tab);
     return 0;
 }
 
