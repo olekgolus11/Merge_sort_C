@@ -37,14 +37,13 @@ void mergeSort(int l, int r, int* tab)
         int mid = (r + l) / 2; //selecting the middle index, for eg. if size = 8 then middle_index = (7 - 0) / 2 + 1 = 3 + 1 = 4
         mergeSort(l, mid, tab);     //splitting the tab in halves
         mergeSort(mid + 1, r, tab);
-        merge(l, mid, r, tab);      //merge function that sorts two parts of half-sorted given array
+        merge(l, mid + 1, r, tab);      //merge function that sorts two parts of half-sorted given array
     }
 }
 
 void merge(int l, int mid, int r, int* tab)
 {
     //necessary
-    mid = mid + 1;
     int i = l;      //left side index
     int j = mid;    //right side index
     int k = 0;      //temporary array index
