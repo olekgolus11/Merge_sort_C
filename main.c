@@ -41,7 +41,7 @@ void mergeSort(int l, int r, int* tab)
 {
     if (l < r) //it is only to check whether the size of chunk of the tab is greater than 1
     {
-        int mid = (r + l) / 2; //selecting the middle index, for eg. if size = 8 then middle_index = (7 - 0) / 2 + 1 = 3 + 1 = 4
+        int mid = (r + l) / 2; //selecting the middle index
         mergeSort(l, mid, tab);     //splitting the tab in halves
         mergeSort(mid + 1, r, tab);
         merge(l, mid + 1, r, tab);      //merge function that sorts two parts of half-sorted given array
