@@ -2,11 +2,11 @@
 #include <stdlib.h>
 #include <time.h>
 
-void mergeSort(int l, int r, int* tab);
+void mergeSort(int l, int r, int* tab); //slices arrays in halves
 
-void merge(int l, int mid, int r, int* tab);
+void merge(int l, int mid, int r, int* tab); //merges two arrays
 
-int main()
+int main() //there's nothing in main function that contributes to the workflow of the mergesort functions, it's here only to demonstrate how it works
 {
     srand(time(NULL));
     //define the size of the array
