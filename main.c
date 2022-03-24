@@ -10,6 +10,7 @@ void merge(int l, int mid, int r, int* tab);
 
 int main()
 {
+    srand(time(NULL));
     int tab[SIZE];
     for (int i = 0; i < SIZE; i++)
     {
@@ -20,13 +21,14 @@ int main()
     {
         printf("%d ", *(tab + i));
     }
-    printf("\n\n\n");
+    printf("\n\nEvery step taken:\n");
     mergeSort(0, SIZE - 1, tab);
-    printf("\n\n\nAfter merge sort:\n");
+    printf("\nAfter merge sort:\n");
     for (int i = 0; i < SIZE; i++)
     {
         printf("%d ", *(tab + i));
     }
+    printf("\n");
     return 0;
 }
 
@@ -78,8 +80,8 @@ void merge(int l, int mid, int r, int* tab)
     }
     for (int a = l, k = 0; a < r + 1; a++, k++) //loop that changes the values in given chunk of original array
     {
-        printf("%d ", *(temp_array + k));
-        *(tab + a) = *(temp_array + k);
+        printf("%d ", *(temp_array + k)); //only used to print the effect of sorting
+        *(tab + a) = *(temp_array + k);   //filling original array
     }
     printf("\n");
     free(temp_array); //clearing the space of temporary array
