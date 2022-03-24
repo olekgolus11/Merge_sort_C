@@ -6,6 +6,8 @@ void mergeSort(int l, int r, int* tab); //slices arrays in halves
 
 void merge(int l, int mid, int r, int* tab); //merges two arrays
 
+int counter = 0; //number of comparisons
+
 int main() //there's nothing in main function that contributes to the workflow of the mergesort functions, it's here only to demonstrate how it works
 {
     srand(time(NULL));
@@ -25,7 +27,7 @@ int main() //there's nothing in main function that contributes to the workflow o
     }
     printf("\n\nEvery step taken:\n");
     mergeSort(0, size - 1, tab);
-    printf("\nAfter merge sort:\n");
+    printf("\nAfter merge sort: (Number of comparisons: %d)\n", counter);
     for (int i = 0; i < size; i++)
     {
         printf("%d ", *(tab + i));
@@ -68,6 +70,7 @@ void merge(int l, int mid, int r, int* tab)
             j++;
             k++;
         }
+        counter++;
     }
     while (i < mid) //loop that fills temporary array with unused values from left chunk
     {
