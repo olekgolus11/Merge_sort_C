@@ -85,11 +85,11 @@ void merge(int l, int mid, int r, int* tab)
         j++;
         k++;
     }
-//    for (int a = l, k = 0; a < r + 1; a++, k++) //loop that changes the values in given chunk of original array
-//    {
+    for (int a = l, k = 0; a < r + 1; a++, k++) //loop that changes the values in given chunk of original array
+    {
 //        printf("%d ", *(temp_array + k)); //only used to print the effect of sorting
-//        *(tab + a) = *(temp_array + k);   //filling original array
-//    }
-//    printf("\n");
+        *(tab + a) = *(temp_array + k);   //filling original array
+    }
+    printf("\n");
     free(temp_array); //clearing the space of temporary array
 }
